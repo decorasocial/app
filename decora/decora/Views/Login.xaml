@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.Login"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+        </ResourceDictionary>
+        </ContentPage.Resources>
+        <ContentPage.Content>
+            <StackLayout Margin="10" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                <StackLayout x:Name="formLogin" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,100,0,0">
+                        <StackLayout>
+                            <Image Source="logo_green" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="50,30"/>
+                            <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="Email" Placeholder="Seu e-mail"/>
+                            <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="Password" IsPassword="True" Placeholder="Senha"/>
+                            <Button FontFamily="{StaticResource OpenSansBold}" Text="Acessar" Clicked="GoLogin" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="4,5">
+                            <Label FontFamily="{StaticResource OpenSansNormal}" Text="Ainda não é registrado?" HorizontalOptions="Start"/>
+                            <Label FontFamily="{StaticResource OpenSansBold}" BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" Text=" Registrar agora">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="goToRegister"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="End">
+                    <Label FontFamily="{StaticResource OpenSansNormal}" x:Name="btRemember" BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Text="Esqueci a senha">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToRemember"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout x:Name="loader" IsVisible="False" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator IsEnabled="true"  IsRunning="True" IsVisible="True" Color="#667653" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

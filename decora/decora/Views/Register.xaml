@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.Register"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <RelativeLayout x:Name="formRegister">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,50,0,0">
+                        <StackLayout>
+                            <Image Source="logo_green" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="80,20"/>
+
+                            <Label Text="Bem-vindo" HorizontalOptions="CenterAndExpand" FontSize="21"  />
+
+                            <Label Text="Perfil profissional? " HorizontalOptions="Start" FontSize="16"  />
+                            <Picker x:Name="comboType" HorizontalOptions="FillAndExpand"></Picker>
+                            <Label Text="Suas preferências " HorizontalOptions="Start" FontSize="16"  />
+                            <StackLayout x:Name="preferences" Orientation="Vertical">
+
+                            </StackLayout>
+
+                            <Entry x:Name="TypeUser" IsVisible="False" />
+
+                            <Label Text="Seus Dados " HorizontalOptions="Start" FontSize="16"  />
+                            <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="NameFull" Placeholder="Nome completo"/>
+                            <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="Mail" Placeholder="E-mail"/>
+                            <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="Password" IsPassword="True" Placeholder="Senha"/>
+
+                            <Button FontFamily="{StaticResource OpenSansBold}" Text="Registrar" Clicked="register" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </RelativeLayout>
+
+                <StackLayout x:Name="loader" IsVisible="False" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator IsEnabled="true"  IsRunning="True" IsVisible="True" Color="#667653" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

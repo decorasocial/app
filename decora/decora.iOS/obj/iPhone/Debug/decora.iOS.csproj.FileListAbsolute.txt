@@ -1,0 +1,10 @@
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\optimized\
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\decora.iOS.csprojResolveAssemblyReference.cache
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\decora.iOS.csproj.CoreCompileInputs.cache
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\decora.iOS.App.xaml.g.cs
+C:\Users\cdvem\OneDrive\Área de Trabalho\fernando\decora\decora\decora.iOS\obj\iPhone\Debug\decora.iOS.MainPage.xaml.g.cs

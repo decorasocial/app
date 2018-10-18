@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.Profile"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansLight">
+                <On Platform="Android" Value="OpenSans-Light.ttf#Open Sans Light" />
+                <On Platform="iOS" Value="OpenSans-Light" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansLightItalic">
+                <On Platform="Android" Value="OpenSans-LightItalic.ttf#Open Sans LightItalic" />
+                <On Platform="iOS" Value="OpenSans-LightItalic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansItalic">
+                <On Platform="Android" Value="OpenSans-Italic.ttf#Open Sans Italic" />
+                <On Platform="iOS" Value="OpenSans-Light" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansSemiBold">
+                <On Platform="Android" Value="OpenSans-Semibold.ttf#Open Sans SemiBold" />
+                <On Platform="iOS" Value="OpenSans-Semibold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansSemiBoldItalic">
+                <On Platform="Android" Value="OpenSans-SemiboldItalic.ttf#Open Sans SemiBoldItalic" />
+                <On Platform="iOS" Value="OpenSans-SemiboldItalic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraRegular">
+                <On Platform="Android" Value="Jura-Regular.ttf#Jura Regular" />
+                <On Platform="iOS" Value="Jura-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraSemiBold">
+                <On Platform="Android" Value="Jura-SemiBold.ttf#Jura SemiBold" />
+                <On Platform="iOS" Value="Jura-SemiBold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraMedium">
+                <On Platform="Android" Value="Jura-Medium.ttf#Jura Medium" />
+                <On Platform="iOS" Value="Jura-Medium" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical">
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout>
+                    <StackLayout VerticalOptions="Start" HeightRequest="50">
+                        <RelativeLayout>
+                            <StackLayout Orientation="Horizontal"
+                                RelativeLayout.XConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.YConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                RelativeLayout.WidthConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                         HeightRequest="55" Spacing="0">
+
+                                <Image Source="logo_green" HeightRequest="40"  VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Margin="0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal"
+                                RelativeLayout.XConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.YConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                RelativeLayout.WidthConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 HeightRequest="50">
+
+                                <StackLayout Padding="15,10" Spacing="0" HorizontalOptions="StartAndExpand">
+                                    <Image Source="menu_dark" HeightRequest="35">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="openMenu"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+
+                                <StackLayout Padding="5,12,12,5" Spacing="0" HorizontalOptions="End" Orientation="Horizontal">
+                                    <Image Source="lupa_dark" Aspect="AspectFit" WidthRequest="17" HeightRequest="17" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="goToExplorer"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                            </StackLayout>
+                        </RelativeLayout>
+                    </StackLayout>
+                    <StackLayout HeightRequest="200" VerticalOptions="Fill">
+                        <RelativeLayout>
+                            <Image x:Name="coverProfile" Aspect="AspectFill"
+                            RelativeLayout.WidthConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                            RelativeLayout.XConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                            RelativeLayout.HeightConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Height, Constant= -20}"
+                            RelativeLayout.YConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                 HeightRequest="60"/>
+                            <BoxView Opacity="0.5" BackgroundColor="Black"
+                            RelativeLayout.WidthConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                            RelativeLayout.XConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                            RelativeLayout.HeightConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}"
+                            RelativeLayout.YConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                 HeightRequest="60"/>
+                            <StackLayout Orientation="Horizontal"
+                            RelativeLayout.WidthConstraint=
+                                "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                            RelativeLayout.XConstraint=
+                                "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                            RelativeLayout.YConstraint=
+                                "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                         HeightRequest="30" Margin="0,10,10,0">
+                                <Image Source="bt_save" IsVisible="False" x:Name="bt_save" HorizontalOptions="EndAndExpand" Aspect="AspectFit" WidthRequest="40" />
+                                <Image Source="bt_save_out" IsVisible="False" x:Name="bt_save_out" HorizontalOptions="EndAndExpand" Aspect="AspectFit" WidthRequest="40" />
+                                <Image Source="bt_share" IsVisible="False" x:Name="bt_share" HorizontalOptions="End" Aspect="AspectFit" WidthRequest="40"  />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="20,0"
+                            RelativeLayout.HeightConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                            RelativeLayout.WidthConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                            RelativeLayout.XConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                            RelativeLayout.YConstraint=
+                              "{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-50}">
+                                <StackLayout>
+                                    <controls:CircleImage x:Name="imageProfile" Source="bg" Aspect="AspectFill" WidthRequest="120" HeightRequest="120" BorderThickness="2" BorderColor="White" HorizontalOptions="Start" Margin="0,35,0,0"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Spacing="0" Margin="0,30,0,0">
+                                    <Label Text="" x:Name="profileName" FontFamily="{StaticResource OpenSansLight}" FontSize="18" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="0" Margin="0,3,0,5" x:Name="blockStarts">
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" IsVisible="False" x:Name="block_ratin_profile">
+                                        <Label x:Name="tt_rating" Text="0 Avaliações"  HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource OpenSansNormal}" FontSize="12" TextColor="White"/>
+                                        <BoxView HeightRequest="17" x:Name="bar_ratingProfile" IsVisible="False" HorizontalOptions="Center" Margin="7,0" WidthRequest="1" BackgroundColor="White" />
+                                        <Label Text="Avalie-me" x:Name="bt_ratingProfile" IsVisible="False" HorizontalOptions="CenterAndExpand"  FontFamily="{StaticResource OpenSansNormal}" FontSize="12" TextColor="White"/>
+                                    </StackLayout>
+                                    <StackLayout Margin="-10,-5,0,0">
+                                        <controls:CircleImage x:Name="editPhoto" IsVisible="False" Source="edit" Aspect="AspectFill" WidthRequest="30" HeightRequest="30" BorderThickness="1" BorderColor="White" HorizontalOptions="Start" Margin="-25,15,0,0"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </RelativeLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="20,5,20,0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="True" WidthRequest="140">
+                            <Image Source="ic_profile_facebook" x:Name="link_facebook" IsVisible="False" WidthRequest="20" HorizontalOptions="Center" />
+                            <Image Source="ic_profile_twitter" x:Name="link_twitter" IsVisible="False" WidthRequest="20" HorizontalOptions="Center" />
+                            <Image Source="ic_profile_gplus" x:Name="link_gplus" IsVisible="False" WidthRequest="20" HorizontalOptions="Center" />
+                            <Image Source="ic_profile_linkedin" x:Name="link_linkedin" IsVisible="False" WidthRequest="20" HorizontalOptions="Center" />
+                            <Image Source="ic_profile_instagram" x:Name="link_instagram" IsVisible="False" WidthRequest="20" HorizontalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Button TextColor="White" x:Name="bt_follow_edit" FontFamily="{StaticResource OpenSansLight}" FontSize="12" HeightRequest="40" WidthRequest="70" BackgroundColor="#667653"/>
+                            <Button TextColor="#667653" Text="Seguindo" x:Name="bt_follow_out" IsVisible="False" FontFamily="{StaticResource OpenSansLight}" FontSize="12" HeightRequest="40" WidthRequest="70" BackgroundColor="White"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" x:Name="stack_bt_website" IsVisible="False">
+                            <Image Source="website" x:Name="bt_website"  Aspect="AspectFit" Margin="0,8,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <ScrollView Margin="10,0,0,5" Orientation="Horizontal">
+                            <ScrollView.Content>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label Text="VISÃO GERAL" HorizontalOptions="CenterAndExpand" x:Name="menuHome"  FontFamily="{StaticResource OpenSansSemiBold}" FontSize="16"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="17" HorizontalOptions="Center" Margin="7,0" WidthRequest="1" BackgroundColor="DarkGray" x:Name="menu_project_div" IsVisible="False" />
+                                    <StackLayout x:Name="menu_project" IsVisible="False">
+                                        <Label Text="PROJETOS" HorizontalOptions="CenterAndExpand" x:Name="menuProject"  FontFamily="{StaticResource OpenSansLight}" FontSize="16"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="17" HorizontalOptions="Center" Margin="7,0" WidthRequest="1" BackgroundColor="DarkGray" x:Name="menu_book_div" />
+                                    <StackLayout x:Name="menu_book">
+                                        <Label Text="LIVRO DE IDEIAS" HorizontalOptions="CenterAndExpand" x:Name="menuBook"  FontFamily="{StaticResource OpenSansLight}" FontSize="16"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="17" HorizontalOptions="Center" Margin="7,0" WidthRequest="1" BackgroundColor="DarkGray" x:Name="menu_rating_div" IsVisible="False" />
+                                    <StackLayout x:Name="menu_rating" IsVisible="False">
+                                        <Label Text="AVALIAÇÕES" HorizontalOptions="CenterAndExpand"  x:Name="menuRating" FontFamily="{StaticResource OpenSansLight}" FontSize="16"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="17" HorizontalOptions="Center" Margin="7,0" WidthRequest="1" BackgroundColor="DarkGray" x:Name="menu_activity_div" IsVisible="False" />
+                                    <StackLayout x:Name="menu_activity" IsVisible="False">
+                                        <Label Text="ATIVIDADES" HorizontalOptions="CenterAndExpand"  x:Name="menuActivity" FontFamily="{StaticResource OpenSansLight}" FontSize="16"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="17" HorizontalOptions="Center" Margin="7,0"  WidthRequest="1" BackgroundColor="DarkGray" x:Name="menu_message_div" IsVisible="False" />
+                                    <StackLayout Margin="0,0,10,0" x:Name="menu_message" IsVisible="False">
+                                        <Label Text="MENSAGENS" HorizontalOptions="CenterAndExpand" x:Name="menuMessage" FontFamily="{StaticResource OpenSansLight}" FontSize="16"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ScrollView.Content>
+                        </ScrollView>
+                    </StackLayout>
+                    <StackLayout Margin="0,5">
+                        <BoxView HeightRequest="2"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Color="#e1e1e1" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="pageContent" Margin="10">
+
+                    </StackLayout>
+
+                    <ActivityIndicator x:Name="contentIndicator" Margin="0,0,0,30" IsRunning="True" IsEnabled="True" IsVisible="True"  Color="#667653" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout VerticalOptions="End" Padding="10" Orientation="Horizontal" BackgroundColor="#d0d0d0">
+                <Button Text="TELEFONE" x:Name="bt_phone" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" FontFamily="{StaticResource juraRegular}" BorderWidth="1" BorderColor="DarkGray" FontSize="16" />
+                <Button Text="CONTATE-ME"  x:Name="bt_email" HorizontalOptions="FillAndExpand" BackgroundColor="#667653" FontFamily="{StaticResource juraRegular}" TextColor="White" FontSize="16" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.ProjectNewModal"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraLight">
+                <On Platform="Android" Value="Jura-Light.ttf#Jura Light" />
+                <On Platform="iOS" Value="Jura-Light" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Image Source="close" Opacity="0.7" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="15">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="close"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="10,0,10,10">
+                        <Label Text="Novo Projeto" HorizontalOptions="CenterAndExpand" FontSize="21" Margin="0,0,0,10"  />
+                        <Label Text="Nome do Projeto"  FontFamily="{StaticResource juraLight}" FontSize="18" HorizontalOptions="Start"/>
+
+                        <Entry x:Name="projectName" />
+                        <Label Text="Descrição"  FontFamily="{StaticResource juraLight}" FontSize="18" HorizontalOptions="Start"/>
+
+                        <Entry x:Name="projectDesc" />
+                        <StackLayout Orientation="Horizontal">
+
+                            <Button Text="Selecionar uma foto" Clicked="selPicture" TextColor="White" HorizontalOptions="FillAndExpand"  WidthRequest="160" FontSize="16" BackgroundColor="#667653"/>
+                            <Button Text="Usar Camera" Clicked="picture" TextColor="White" HorizontalOptions="FillAndExpand" WidthRequest="160" FontSize="16" BackgroundColor="#667653"/>
+
+                        </StackLayout>
+                        <Entry IsVisible="False" x:Name="imagePost"/>
+                        <Image HorizontalOptions="Center" WidthRequest="150" HeightRequest="150" Aspect="AspectFill" x:Name="imageCharged" />
+
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Salvar Projeto" Clicked="saveProject" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

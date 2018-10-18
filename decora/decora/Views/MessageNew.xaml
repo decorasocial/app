@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.MessageNew"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansLight">
+                <On Platform="Android" Value="OpenSans-Light.ttf#Open Sans Light" />
+                <On Platform="iOS" Value="OpenSans-Light" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansLightItalic">
+                <On Platform="Android" Value="OpenSans-LightItalic.ttf#Open Sans LightItalic" />
+                <On Platform="iOS" Value="OpenSans-LightItalic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansItalic">
+                <On Platform="Android" Value="OpenSans-Italic.ttf#Open Sans Italic" />
+                <On Platform="iOS" Value="OpenSans-Light" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansSemiBold">
+                <On Platform="Android" Value="OpenSans-Semibold.ttf#Open Sans SemiBold" />
+                <On Platform="iOS" Value="OpenSans-Semibold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansSemiBoldItalic">
+                <On Platform="Android" Value="OpenSans-SemiboldItalic.ttf#Open Sans SemiBoldItalic" />
+                <On Platform="iOS" Value="OpenSans-SemiboldItalic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraRegular">
+                <On Platform="Android" Value="Jura-Regular.ttf#Jura Regular" />
+                <On Platform="iOS" Value="Jura-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraSemiBold">
+                <On Platform="Android" Value="Jura-SemiBold.ttf#Jura SemiBold" />
+                <On Platform="iOS" Value="Jura-SemiBold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraBold">
+                <On Platform="Android" Value="Jura-Bold.ttf#Jura Bold" />
+                <On Platform="iOS" Value="Jura-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraMedium">
+                <On Platform="Android" Value="Jura-Medium.ttf#Jura Medium" />
+                <On Platform="iOS" Value="Jura-Medium" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraLight">
+                <On Platform="Android" Value="Jura-Light.ttf#Jura Light" />
+                <On Platform="iOS" Value="Jura-Light" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical">
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Image Source="close" Opacity="0.7" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="15">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="close"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="10,0,10,10">
+                        <Label Text="Mensagem" HorizontalOptions="CenterAndExpand" FontSize="21" Margin="0,0,0,10"  />
+                        <Label Text="Nova mensagem para para Patricia Lima" Margin="0,0,0,10"  FontFamily="{StaticResource juraLight}" FontSize="18" HorizontalOptions="Start"/>
+
+                        <Entry x:Name="messageContent" />
+
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Enviar Mensagem" Clicked="saveMessage" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

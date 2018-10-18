@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.BlogAll"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansLightItalic">
+                <On Platform="Android" Value="OpenSans-LightItalic.ttf#Open Sans LightItalic" />
+                <On Platform="iOS" Value="OpenSans-LightItalic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="juraRegular">
+                <On Platform="Android" Value="Jura-Regular.ttf#Jura Regular" />
+                <On Platform="iOS" Value="Jura-Regular" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout VerticalOptions="Start" HeightRequest="50">
+                <RelativeLayout>
+                    <StackLayout Orientation="Horizontal"
+                                RelativeLayout.XConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.YConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                RelativeLayout.WidthConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                         HeightRequest="55" Spacing="0">
+
+                        <Image Source="logo_green" HeightRequest="40"  VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Margin="0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="goToTimeline"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                RelativeLayout.XConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.YConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                RelativeLayout.WidthConstraint=
+                                  "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                 HeightRequest="50">
+
+                        <StackLayout Padding="15,10" Spacing="0" HorizontalOptions="StartAndExpand">
+                            <Image Source="menu_dark" HeightRequest="35">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="openMenu"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+
+                        <StackLayout Padding="5,12,12,5" Spacing="0" HorizontalOptions="End" Orientation="Horizontal">
+                        </StackLayout>
+                    </StackLayout>
+                </RelativeLayout>
+            </StackLayout>
+
+            <StackLayout Margin="0">
+                <BoxView HeightRequest="1"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Color="LightGray" />
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="200">
+                <RelativeLayout>
+                    <Image x:Name="img_main" Aspect="AspectFill" HeightRequest="150"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" />
+                    <BoxView Opacity="0.8" BackgroundColor="Black" HeightRequest="50"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-52}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                 />
+                    <StackLayout Orientation="Vertical" Spacing="0" Margin="0,10,0,0" HeightRequest="50" VerticalOptions="Center"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-57}"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X}"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+                        <Label x:Name="category_tt" HorizontalOptions="Center" TextColor="White" />
+                        <Label Text="Todas Categorias" HorizontalOptions="Center" TextColor="White" />
+                        <Picker x:Name="comboCategory" IsVisible="False"></Picker>
+                    </StackLayout>
+                </RelativeLayout>
+            </StackLayout>
+            <StackLayout BackgroundColor="LightGray" Margin="20,10" HorizontalOptions="FillAndExpand" x:Name="category_sel" Padding="0,10">
+                <Label Text="ESCOLHA UMA CATEGORIA" TextColor="DarkGray" HorizontalOptions="Center" FontSize="18" />
+            </StackLayout>
+            <ScrollView x:Name="scrollExplorer">
+                <ActivityIndicator x:Name="contentIndicator" Margin="0,0,0,30" IsRunning="True" IsEnabled="True" IsVisible="True"  Color="#667653" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                <StackLayout Orientation="Vertical" Margin="10" x:Name="pageContent">
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

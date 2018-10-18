@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.Remember"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10" Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <RelativeLayout x:Name="formRemember">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,50,0,0">
+                    <StackLayout>
+                        <Image Source="logo_green" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="80,20"/>
+
+                        <Label Text="Redefinir senha" HorizontalOptions="CenterAndExpand" FontSize="21"  />
+                        <Entry FontFamily="{StaticResource OpenSansNormal}" x:Name="Mail" Placeholder="Seu e-mail..."/>
+
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Enviar" Clicked="sendRemember" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                    </StackLayout>
+                </StackLayout>
+            </RelativeLayout>
+
+            <StackLayout x:Name="loader" IsVisible="False" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator IsEnabled="true"  IsRunning="True" IsVisible="True" Color="#667653" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.Menu"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansNormal">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSansBold">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans Bold" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10" Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <RelativeLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0">
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="End">
+                            <Image Source="close" Opacity="0.7" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="5">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="close"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <Image Source="logo_green" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="80,-5,80,20"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Timeline" x:Name="goTimeline" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Perfil" x:Name="goProfile" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Blog" x:Name="goBlog" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Categorias" x:Name="goCategoryList" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Explorar" x:Name="goExplorer" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                        <Button FontFamily="{StaticResource OpenSansBold}" Text="Sair" Clicked="goLogout" TextColor="White" BackgroundColor="#667653" BorderWidth="0"/>
+                    </StackLayout>
+                </StackLayout>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

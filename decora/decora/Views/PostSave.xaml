@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decora.Views.PostSave">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Image Source="close" Opacity="0.7" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="15">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="close"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="10,0,10,10">
+                        <Label Text="Salvar Imagem" HorizontalOptions="CenterAndExpand" FontSize="21" Margin="0,0,0,10"  />
+                        <Label Text="Selecione um livro de idéias" HorizontalOptions="FillAndExpand" TextColor="#667653"  WidthRequest="160" FontSize="16" x:Name="txtInstruct"/>
+                        <Picker x:Name="comboBook"></Picker>
+                        <Label Text="Você ainda não tem nenhum livro de idéias para salvar esta foto." IsVisible="False" x:Name="msgEmpty"/>
+                        <Button Text="Selecionar no Livro" x:Name="bt_save_post" IsVisible="False" TextColor="White" HorizontalOptions="FillAndExpand"  WidthRequest="160" FontSize="16" BackgroundColor="#667653"/>
+                        <StackLayout Orientation="Horizontal" x:Name="booksSaved">
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
